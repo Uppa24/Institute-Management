@@ -1,0 +1,28 @@
+.navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333; /* Background color for the navbar */
+        padding: 20px; /* Add padding for better appearance */
+    }
+
+    .navbar div {
+        margin: 0 20px; /* Adjust spacing between elements */
+    }
+
+    .navbar a {
+        color: white; /* Text color for links */
+        text-decoration: none; /* Remove underline from links */
+        font-size: 20px;
+    }
+
+    h2 {
+        color: #fff; /* Text color for heading */
+        margin: 0; /* Remove default margin */
+    }
+
+
+    img {
+    max-height: 50%;
+    height: 520px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">age</th>
+      <th scope="col">email</th>
+      <th scope="col">education</th>
+      <th scope="col">gender</th>
+      <th scope="col">skills</th>
+      <th scope="col">place</th>
+      <th scope="col">mobile</th>
+      <th scope="col">image</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{ i.id }}</th>
+      <td>{{ i.name }}</td>
+      <td>{{ i.age }}</td>
+      <td>{{ i.email }}</td>
+      <td>{{ i.education }}</td>
+      <td>{{ i.gender }}</td>
+      <td>{{ i.skills }}</td>
+      <td>{{ i.place }}</td>
+      <td>{{ i.mobile }}</td>
+      <td>
+          <a href="http://127.0.0.1:8000/media/{{ i.image }}" target="_blank">
+          <img src="http://127.0.0.1:8000/media/{{ i.image }}" alt="Image" height="100">
+            </a>
+      </td>
+      <td>
+        <button type="button" class="btn btn-warning">
+          <a href="{% url 'update' i.id %}" style="text-decoration:none">update</a>
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger">
+          <a href="{% url 'delete' i.id %}" style="text-decoration:none">delete</a>
+        </button>
+      </td>
+    </tr>
+
+   {% endfor %}
+  </tbody>
+</table>
+
+</body>
+</html>

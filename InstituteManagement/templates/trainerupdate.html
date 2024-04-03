@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Registration Form</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{ data.name }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="number" class="form-control" id="age" name="age" value="{{ data.age }}" required>
+                            </div>
+                              <div class="form-group">
+                                <label for="mobile">Mobile</label>
+                                <input type="number" class="form-control" id="mobile" name="mobile" value="{{ data.mobile }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control" id="gender" name="gender" required>
+                                    <option selected>{{ data.gender }}</option>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                        <label for="education">Education</label>
+                        <select class="form-control" id="education" name="education" required>
+                            <option selected>{{ data.education }}</option>
+                            <option value="">Select Education</option>
+                            <option value="10th">10th</option>
+                            <option value="12th">12th</option>
+                            <option value="degree">Degree</option>
+                            <option value="postgraduation">Post Graduation</option>
+                            <option value="phd">PhD</option>
+                        </select>
+                    </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="{{ data.email }}" required>
+                            </div>
+                          <div class="form-group">
+                    <label>Skills</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="python" name="skills" value="python">
+                        <label class="form-check-label" for="python">Python</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="html" name="skills" value="html">
+                        <label class="form-check-label" for="html">HTML</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="css" name="skills" value="css">
+                        <label class="form-check-label" for="css">CSS</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="js" name="skills" value="js">
+                        <label class="form-check-label" for="js">JavaScript</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="django" name="skills" value="django">
+                        <label class="form-check-label" for="django">Django</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="ml" name="skills" value="ml">
+                        <label class="form-check-label" for="ml">Machine Learning</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mysql" name="skills" value="mysql">
+                        <label class="form-check-label" for="mysql">MySQL</label>
+                    </div>
+                </div>
+
+                            <div class="form-group">
+                                <label for="place">Place</label>
+                                <input type="text" class="form-control" id="place" name="place" value="{{ data.place }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Image</label>
+                                <input type="file" class="form-control-file" id="image" name="image">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
